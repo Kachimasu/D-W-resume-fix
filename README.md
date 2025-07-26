@@ -3,9 +3,93 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Daksh & Wins</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>D&W Resume Fix</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("C6K9PyesFwf9DIt9l");
+    })();
+
+    function sendEmail(e) {
+      e.preventDefault();
+      emailjs.sendForm('service_xotibp9', 'template_tzvdsh4', e.target)
+        .then(function(response) {
+          alert("Message sent successfully!");
+        }, function(error) {
+          alert("Failed to send message. Try again later.");
+        });
+    }
+  </script>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #111;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    header {
+      background-color: #000;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-circle {
+      width: 25px;
+      height: 25px;
+      background: linear-gradient(to right, red 50%, white 50%);
+      border-radius: 50%;
+    }
+
+    .brand-name {
+      font-family: 'Cinzel', serif;
+      color: red;
+      font-size: 70px;
+      letter-spacing: 6px;
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .deadpool-img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .buttons {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      margin: 0 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .book-now {
+      background-color: red;
+      color: white;
+    }
+
+    .book-now:hover {
+      background-color: darkred;
+    }
+
     .modal {
       display: none;
       position: fixed;
@@ -15,89 +99,92 @@
       width: 100%;
       height: 100%;
       overflow: auto;
-      background-color: rgba(0,0,0,0.5);
+      background-color: rgba(0,0,0,0.7);
     }
+
     .modal-content {
-      background-color: #fff;
-      margin: 10% auto;
+      background-color: #1f1f1f;
+      margin: 15% auto;
       padding: 20px;
-      border-radius: 10px;
+      border: 1px solid #888;
       width: 90%;
       max-width: 400px;
-    }
-    .close {
-      float: right;
-      font-size: 24px;
-      cursor: pointer;
-    }
-    .submit-btn {
-      margin-top: 15px;
-      padding: 10px 20px;
-      background-color: #ff4d4d;
+      border-radius: 10px;
+      text-align: center;
       color: white;
+    }
+
+    .modal-content input,
+    .modal-content select,
+    .modal-content textarea {
+      width: 80%;
+      padding: 10px;
+      margin-top: 15px;
+      font-size: 16px;
+      border-radius: 8px;
       border: none;
-      border-radius: 5px;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
       cursor: pointer;
     }
-    .submit-btn:hover {
-      background-color: #e60000;
+
+    .close:hover {
+      color: white;
     }
-    input, select {
-      width: 100%;
-      padding: 8px;
-      margin: 10px 0;
-      box-sizing: border-box;
+
+    .socials {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .socials a {
+      color: #f44336;
+      margin: 0 10px;
+      font-weight: bold;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
   <header>
-    <nav>
-      <div class="logo-toggle">
-        <div class="logo-circle"></div>
-      </div>
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Booking</a></li>
-        <li><a href="#">Tickets</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Socials</a></li>
-      </ul>
-      <div class="right-icons">
-        <div class="circle-icon"></div>
-        <div class="circle-icon"></div>
-      </div>
-    </nav>
+    <div class="logo-circle"></div>
   </header>
 
-  <section class="hero">
-    <h1 class="popout">DAKSH & WINS</h1>
-    <img src="https://i.ibb.co/Kx7JF0Bh/426a79ea78b44abd1c36414389a57d31.jpg" alt="Character" class="deadpool-img" />
-    <div class="buttons">
-      <button class="book-now" onclick="openModal()">Book Now</button>
-      <button class="tickets">Tickets</button>
-    </div>
-  </section>
+  <h1 class="brand-name">D&amp;W Resume Fix</h1>
+  <img src="https://i.ibb.co/Kx7JF0Bh/426a79ea78b44abd1c36414389a57d31.jpg" alt="Character" class="deadpool-img" />
 
-  <!-- Modal -->
+  <div class="buttons">
+    <button class="book-now" onclick="openModal()">Book Now</button>
+  </div>
+
   <div id="bookingModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
-      <form action="https://formsubmit.co/winschauhan8@gmail.com" method="POST">
-        <h2>What do you want to build?</h2>
-        <select name="service" required>
-          <option value="">Select one</option>
-          <option value="Resume">Resume</option>
-          <option value="Logo">Logo</option>
-          <option value="Design">Design</option>
-          <option value="Custom Photo Made">Custom Photo Made</option>
-        </select>
-
+      <h2>What do you want to build?</h2>
+      <form onsubmit="sendEmail(event)">
+        <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
-
-        <button type="submit" class="submit-btn">Submit</button>
+        <select name="service">
+          <option value="resume">Resume</option>
+          <option value="logo">Logo</option>
+          <option value="design">Design</option>
+          <option value="photo">Custom Photo Made</option>
+        </select>
+        <textarea name="message" rows="4" placeholder="Message (Optional)"></textarea>
+        <button type="submit">Submit</button>
       </form>
     </div>
+  </div>
+
+  <div class="socials">
+    <p>Follow us on Instagram:</p>
+    <a href="https://www.instagram.com/wins_chauhan/" target="_blank">Wins</a>
+    <a href="https://www.instagram.com/daksh471/" target="_blank">Daksh</a>
   </div>
 
   <script>
